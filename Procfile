@@ -1,1 +1,1 @@
-web: java -jar target/back-end-knitting-patterns.jar
+web: java -jar
