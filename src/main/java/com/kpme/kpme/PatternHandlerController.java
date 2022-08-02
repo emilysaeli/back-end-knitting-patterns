@@ -1,17 +1,21 @@
 package com.kpme.kpme;
 
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import netscape.javascript.JSObject;
+import org.springframework.web.bind.annotation.*;
+
+
 
 @RestController
 public class PatternHandlerController {
 
     private static final String template = "Here is your pattern: %s!";
 
-    @GetMapping("")
-    PatternHandler patternHandler(@RequestParam String pattern) {
-        return new PatternHandler(String.format(template, pattern));
+    @PostMapping("")
+    @ResponseBody
+    public PatternHandler createPattern(@RequestBody PatternHandler inputPattern) {
+        return inputPattern;
+//        return new PatternHandler(String.format(template, inputPattern));
     }
 }
+
