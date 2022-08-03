@@ -1,16 +1,23 @@
 package com.kpme.kpme;
 
-public class PatternHandler {
-    private String inputPattern;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
-    public PatternHandler(String inputPattern) {
+import static com.kpme.kpme.Row.generateRow;
 
-        this.inputPattern = inputPattern;
+public class ReturnPattern {
+    private ArrayList<Stitch> outputPattern;
+
+    public ReturnPattern(String inputPattern) {
+
+        this.outputPattern = generateRow(inputPattern);
 
     }
 
-    public String getInputPattern() {
-        return inputPattern;
+    public ArrayList<Stitch> getOutputPattern() {
+
+        System.out.println(outputPattern);
+        return outputPattern;
     }
 }
 
