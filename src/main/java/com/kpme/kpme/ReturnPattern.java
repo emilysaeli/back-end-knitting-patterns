@@ -1,15 +1,19 @@
 package com.kpme.kpme;
 
-public class PatternHandler {
+import static com.kpme.kpme.Row.generateRow;
+
+public class ReturnPattern {
     private String inputPattern;
 
-    public PatternHandler(String inputPattern) {
+    public ReturnPattern(String inputPattern) {
 
-        this.inputPattern = inputPattern;
+        this.inputPattern = generateRow(inputPattern);
 
     }
 
     public String getInputPattern() {
+
+        System.out.println(inputPattern);
         return inputPattern;
     }
 }

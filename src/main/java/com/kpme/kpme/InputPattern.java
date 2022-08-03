@@ -1,6 +1,6 @@
 package com.kpme.kpme;
 
-public class Pattern {
+public class InputPattern {
     private String inputPattern;
 
     public void setInputPattern(){
