@@ -13,7 +13,7 @@ public class PatternHandlerController {
     @CrossOrigin(origins = "*")
     @PostMapping("")
     public PatternHandler createPattern(@RequestBody Pattern inputPattern) {
-        return new PatternHandler(String.format(template, inputPattern.getInputPattern()));
+        return new PatternHandler(inputPattern.getInputPattern());
     }
 }
 
