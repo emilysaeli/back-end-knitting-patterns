@@ -12,8 +12,8 @@ public class PatternHandlerController {
 
     @CrossOrigin(origins = "*")
     @PostMapping("")
-    public PatternHandler createPattern(@RequestBody String inputPattern) {
-        return new PatternHandler(String.format(template, inputPattern));
+    public PatternHandler createPattern(@RequestBody Pattern inputPattern) {
+        return new PatternHandler(String.format(template, inputPattern.getInputPattern()));
     }
 }
 
