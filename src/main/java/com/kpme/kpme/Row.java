@@ -16,8 +16,7 @@ public class Row {
         ArrayList<Stitch> row = generateOneRowOfStitches(stitchBlocks);
 
         // convert array of objects to json
-        String rowAsString = convertArrayToJson(row);
-
+//        String rowAsString = convertArrayToJson(row);
         return row;
     }
 
@@ -51,9 +50,9 @@ public class Row {
         return row;
     }
 
-    public static String convertArrayToJson(ArrayList<Stitch> arrayList) {
-        Gson gson = new Gson();
-        String jsonString = gson.toJson(arrayList);
-        return jsonString;
-    }
+//    public static String convertArrayToJson(ArrayList<Stitch> arrayList) {
+//        Gson gson = new Gson();
+//        String jsonString = gson.toJson(arrayList);
+//        return jsonString;
+//    }
 }
