@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 
 public class Row {
 
-    public static String generateRow(String input) {
+    public static ArrayList<Stitch> generateRow(String input) {
         // Get an array of stitchBlocks from input (1 row only)
         ArrayList<StitchBlock> stitchBlocks = generateStitchBlocks(input);
 
@@ -18,7 +18,7 @@ public class Row {
         // convert array of objects to json
         String rowAsString = convertArrayToJson(row);
 
-        return rowAsString;
+        return row;
     }
 
 

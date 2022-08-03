@@ -1,20 +1,23 @@
 package com.kpme.kpme;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 import static com.kpme.kpme.Row.generateRow;
 
 public class ReturnPattern {
-    private String inputPattern;
+    private ArrayList<Stitch> outputPattern;
 
     public ReturnPattern(String inputPattern) {
 
-        this.inputPattern = generateRow(inputPattern);
+        this.outputPattern = generateRow(inputPattern);
 
     }
 
-    public String getInputPattern() {
+    public ArrayList<Stitch> getOutputPattern() {
 
-        System.out.println(inputPattern);
-        return inputPattern;
+        System.out.println(outputPattern);
+        return outputPattern;
     }
 }
 
