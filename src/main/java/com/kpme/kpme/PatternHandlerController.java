@@ -1,7 +1,6 @@
 package com.kpme.kpme;
 
 
-import netscape.javascript.JSObject;
 import org.springframework.web.bind.annotation.*;
 
 
