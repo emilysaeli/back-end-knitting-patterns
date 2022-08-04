@@ -2,11 +2,28 @@ package com.kpme.kpme;
 import com.google.gson.Gson;
 
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Row {
+
+
+    public static ArrayList<ArrayList<Stitch>> parsePattern(String input) {
+        String[] lines = input.split(System.lineSeparator());
+        ArrayList<ArrayList<Stitch>> outputPattern = new ArrayList<ArrayList<Stitch>>();
+
+        for (String line: lines) {
+            ArrayList<Stitch> row = generateRow(line);
+            if (!row.isEmpty()) {
+                outputPattern.add(row);
+            }
+        }
+        return outputPattern;
+    }
+
 
     public static ArrayList<Stitch> generateRow(String input) {
         // Get an array of stitchBlocks from input (1 row only)
