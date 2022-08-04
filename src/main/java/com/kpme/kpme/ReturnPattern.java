@@ -4,19 +4,18 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import static com.kpme.kpme.Row.generateRow;
+import static com.kpme.kpme.Row.parsePattern;
 
 public class ReturnPattern {
-    private ArrayList<Stitch> outputPattern;
+    private ArrayList<ArrayList<Stitch>> outputPattern;
 
     public ReturnPattern(String inputPattern) {
 
-        this.outputPattern = generateRow(inputPattern);
+        this.outputPattern = parsePattern(inputPattern);
 
     }
 
-    public ArrayList<Stitch> getOutputPattern() {
-
-        System.out.println(outputPattern);
+    public ArrayList<ArrayList<Stitch>> getOutputPattern() {
         return outputPattern;
     }
 }
