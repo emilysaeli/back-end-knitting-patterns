@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 
 @RestController
-public class PatternHandlerController {
+public class PatternController {
 
     @CrossOrigin(origins = "*")
     @PostMapping("")
