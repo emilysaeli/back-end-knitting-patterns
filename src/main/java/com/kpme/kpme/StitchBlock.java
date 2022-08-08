@@ -41,4 +41,22 @@ public class StitchBlock {
         }
         return matches;
     }
+
+    public static ArrayList<StitchBlock> generateCastOnRow(ArrayList<ArrayList<Stitch>> pattern) {
+        ArrayList<StitchBlock> castOnRow = new ArrayList<StitchBlock>();
+        String stitchType = "CO";
+        int count = pattern.get(0).size();
+        StitchBlock stitchBlock = new StitchBlock(stitchType, count);
+        castOnRow.add(stitchBlock);
+        return castOnRow;
+    }
+
+    public static ArrayList<StitchBlock> generateBindOffRow(ArrayList<ArrayList<Stitch>> pattern) {
+        ArrayList<StitchBlock> bindOffRow = new ArrayList<StitchBlock>();
+        String stitchType = "BO";
+        int count = pattern.get(0).size();
+        StitchBlock stitchBlock = new StitchBlock(stitchType, count);
+        bindOffRow.add(stitchBlock);
+        return bindOffRow;
+    }
 }

@@ -2,8 +2,7 @@ package com.kpme.kpme;
 
 import java.util.ArrayList;
 import static com.kpme.kpme.Row.generateOneRowOfStitches;
-import static com.kpme.kpme.StitchBlock.generateStitchBlocks;
-
+import static com.kpme.kpme.StitchBlock.*;
 
 
 public class ReturnPattern {
@@ -36,6 +35,13 @@ public class ReturnPattern {
                 outputPattern.add(row);
             }
         }
+
+         ArrayList<StitchBlock> bindOff = generateBindOffRow(outputPattern);
+         ArrayList<StitchBlock> castOn = generateCastOnRow(outputPattern);
+         outputPattern.add(0, generateOneRowOfStitches(castOn));
+         outputPattern.add(generateOneRowOfStitches(bindOff));
+
         return outputPattern;
     }
 }
+
