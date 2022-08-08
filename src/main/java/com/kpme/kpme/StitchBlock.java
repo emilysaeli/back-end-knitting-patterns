@@ -42,6 +42,7 @@ public class StitchBlock {
         return matches;
     }
 
+    // generate CO and BO rows based on length of first row in pattern
     public static ArrayList<StitchBlock> generateCastOnRow(ArrayList<ArrayList<Stitch>> pattern) {
         ArrayList<StitchBlock> castOnRow = new ArrayList<StitchBlock>();
         String stitchType = "CO";
@@ -50,7 +51,6 @@ public class StitchBlock {
         castOnRow.add(stitchBlock);
         return castOnRow;
     }
-
     public static ArrayList<StitchBlock> generateBindOffRow(ArrayList<ArrayList<Stitch>> pattern) {
         ArrayList<StitchBlock> bindOffRow = new ArrayList<StitchBlock>();
         String stitchType = "BO";

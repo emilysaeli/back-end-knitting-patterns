@@ -35,7 +35,7 @@ public class ReturnPattern {
                 outputPattern.add(row);
             }
         }
-
+         // generate BO and CO stitch blocks and rows, add to beginning and end of outputPattern
          ArrayList<StitchBlock> bindOff = generateBindOffRow(outputPattern);
          ArrayList<StitchBlock> castOn = generateCastOnRow(outputPattern);
          outputPattern.add(0, generateOneRowOfStitches(castOn));
