@@ -16,7 +16,7 @@ public class ReturnPattern {
     public static ArrayList<ArrayList<Stitch>> createPattern() {
 
         // split pattern input into lines/rows
-        String[] lines = inputPattern.split(System.lineSeparator());
+        String[] lines = inputPattern.split("\\r?\\n|\\r");
 
         // empty ArrayList to hold output pattern
         ArrayList<ArrayList<Stitch>> outputPattern = new ArrayList<>();
