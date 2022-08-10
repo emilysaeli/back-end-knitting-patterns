@@ -6,21 +6,17 @@ import static com.kpme.kpme.StitchBlock.*;
 
 
 public class ReturnPattern {
-    private final ArrayList<ArrayList<Stitch>> outputPattern;
 
+    private static String inputPattern;
     public ReturnPattern(String inputPattern) {
-        this.outputPattern = createPattern(inputPattern);
+        this.inputPattern = inputPattern;
     }
 
-    // getter
-    public ArrayList<ArrayList<Stitch>> getOutputPattern() {
-        return outputPattern;
-    }
 
-    public static ArrayList<ArrayList<Stitch>> createPattern(String input) {
+    public static ArrayList<ArrayList<Stitch>> createPattern() {
 
         // split pattern input into lines/rows
-        String[] lines = input.split(System.lineSeparator());
+        String[] lines = inputPattern.split(System.lineSeparator());
 
         // empty ArrayList to hold output pattern
         ArrayList<ArrayList<Stitch>> outputPattern = new ArrayList<>();

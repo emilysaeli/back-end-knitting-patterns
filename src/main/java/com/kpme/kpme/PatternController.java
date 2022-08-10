@@ -10,7 +10,7 @@ public class PatternController {
     @CrossOrigin(origins = "*")
     @PostMapping("")
     public ArrayList<ArrayList<Stitch>> createPattern(@RequestBody InputPattern inputPattern) {
-        return new ReturnPattern(inputPattern.getInputPattern()).getOutputPattern();
+        return new ReturnPattern(inputPattern.inputPattern).createPattern();
     }
 }
 

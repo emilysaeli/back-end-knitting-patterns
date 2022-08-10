@@ -15,15 +15,6 @@ public class StitchBlock {
         this.count = count;
     }
 
-    // Generate stitch object from stitchblock
-    public ArrayList<Stitch> generateStitches() {
-        ArrayList<Stitch> stitches = new ArrayList<>();
-        for (int i = 0; i < this.count; i++) {
-            Stitch newStitch = new Stitch(this.stitch);
-            stitches.add(newStitch);
-        }
-        return stitches;
-    }
 
     // generate stitch blocks, currently only looking for "K1" "P1" format
     public static ArrayList<StitchBlock> generateStitchBlocks(String input) {

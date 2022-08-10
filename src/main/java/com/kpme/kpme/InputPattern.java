@@ -3,15 +3,10 @@ package com.kpme.kpme;
 
 // class to hold inputPattern
 public class InputPattern {
-    private String inputPattern;
+    public String inputPattern;
 
-    public void setInputPattern(){
+    public void InputPattern (String inputPattern){
         this.inputPattern = inputPattern;
     }
 
-    // getter
-    public String getInputPattern() {
-        return inputPattern;
-
-    }
 }
