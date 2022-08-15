@@ -21,7 +21,7 @@ public class Row {
     }
 
     public static int checkForRange(String line) {
-        String rangePattern = "(?:(\\d|\\d )\\-(\\d| \\d))";
+        String rangePattern = "(?:(\\d+|\\d+ )\\-(\\d+| \\d+))";
         Pattern r = Pattern.compile(rangePattern);
         Matcher matcher = r.matcher(line);
         if (matcher.find()) {
@@ -31,10 +31,12 @@ public class Row {
         return 1;
     }
 
-    // converts row to JSON string, currently not in use
-//    public static String convertArrayToJson(ArrayList<Stitch> arrayList) {
-//        Gson gson = new Gson();
-//        String jsonString = gson.toJson(arrayList);
-//        return jsonString;
-//    }
+    /*
+ converts row to JSON string, currently not in use
+    public static String convertArrayToJson(ArrayList<Stitch> arrayList) {
+        Gson gson = new Gson();
+        String jsonString = gson.toJson(arrayList);
+        return jsonString;
+    }
+*/
 }
