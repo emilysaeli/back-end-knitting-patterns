@@ -12,7 +12,6 @@ public class PatternController {
     @CrossOrigin(origins = "*")
     @PostMapping("")
     public ArrayList<ArrayList<Stitch>> createPattern(@RequestBody InputPattern inputPattern) {
-        System.out.println(inputPattern.inputPattern);
         return new ReturnPattern(inputPattern.inputPattern).createPattern();
     }
 }
