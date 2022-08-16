@@ -31,9 +31,6 @@ public class StitchBlock {
             StitchBlock stitchBlock = new StitchBlock(stitchType, count);
             matches.add(stitchBlock);
         }
-//        if (matches.isEmpty()) {
-//            throw new RuntimeException("Unable to identify stitches");
-//        }
         return matches;
     }
 
@@ -55,6 +52,7 @@ public class StitchBlock {
         return bindOffRow;
     }
 
+    // generate empty stitches in case of uneven row lengths
     public static ArrayList<Stitch> generateEmptyStitches(ArrayList<Stitch> row, int extraStitches) {
         StitchBlock stitchBlock = new StitchBlock("X", extraStitches);
         ArrayList<Stitch> stitches = generateStitches(stitchBlock);
