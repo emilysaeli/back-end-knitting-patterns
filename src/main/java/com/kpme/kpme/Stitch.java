@@ -16,7 +16,7 @@ public class Stitch {
     public static ArrayList<Stitch> generateStitches(StitchBlock stitchBlock) {
         ArrayList<Stitch> stitches = new ArrayList<>();
         if (stitchBlock.count > 200) {
-            throw new RuntimeException("Pattern contains too many consecutive stitches of the same type");
+            throw new RuntimeException("Pattern contains more than 200 consecutive stitches of the same type");
         }
         for (int i = 0; i < stitchBlock.count; i++) {
             Stitch newStitch = new Stitch(stitchBlock.stitch);

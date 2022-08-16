@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static com.kpme.kpme.Stitch.generateStitches;
 
 
 public class StitchBlock {
@@ -30,9 +31,9 @@ public class StitchBlock {
             StitchBlock stitchBlock = new StitchBlock(stitchType, count);
             matches.add(stitchBlock);
         }
-        if (matches.isEmpty()) {
-            throw new RuntimeException("Unable to identify stitches");
-        }
+//        if (matches.isEmpty()) {
+//            throw new RuntimeException("Unable to identify stitches");
+//        }
         return matches;
     }
 
@@ -52,5 +53,12 @@ public class StitchBlock {
         StitchBlock stitchBlock = new StitchBlock(stitchType, count);
         bindOffRow.add(stitchBlock);
         return bindOffRow;
+    }
+
+    public static ArrayList<Stitch> generateEmptyStitches(ArrayList<Stitch> row, int extraStitches) {
+        StitchBlock stitchBlock = new StitchBlock("X", extraStitches);
+        ArrayList<Stitch> stitches = generateStitches(stitchBlock);
+        row.addAll(stitches);
+        return row;
     }
 }

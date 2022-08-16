@@ -17,8 +17,8 @@ public class Row {
             ArrayList<Stitch> stitches = generateStitches(stitchBlock);
             row.addAll(stitches);
         }
-        if (row.size() > 200) {
-            throw new RuntimeException("Pattern contains one or more row(s) exceeding 200 stitches");
+        if (row.size() > 500) {
+            throw new RuntimeException("Pattern contains one or more row(s) exceeding 500 stitches");
         }
         return row;
     }
@@ -30,6 +30,9 @@ public class Row {
         Matcher matcher = r.matcher(line);
         if (matcher.find()) {
             int rowCount = Integer.parseInt(matcher.group(2).trim()) - Integer.parseInt(matcher.group(1).trim()) + 1; // number of rows to generate
+            if (rowCount > 500) {
+                throw new RuntimeException("Pattern contains more than 500 rows");
+            }
             return rowCount;
         }
         return 1;
