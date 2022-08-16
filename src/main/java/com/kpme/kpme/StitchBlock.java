@@ -20,8 +20,13 @@ public class StitchBlock {
     // generate stitch blocks, currently only looking for "K1" "P1" format
     public static ArrayList<StitchBlock> generateStitchBlocks(String input) {
         // parse string input into an array of stitchBlock capture groups
-        String stitchBlockPattern = "([KP]|Knit|Purl|Knit |Purl )(\\d+)";  // K or P + count
+        String stitchBlockPattern = "([KP]|Knit|Purl|Knit |Purl )(\\d+)";  // K or P or Knit or Purl + count
+//        String invalidPattern = "([KP]|Knit|Purl|Knit |Purl )"; // Missing count
         Pattern r = Pattern.compile(stitchBlockPattern, Pattern.CASE_INSENSITIVE);
+//        Pattern s = Pattern.compile(invalidPattern, Pattern.CASE_INSENSITIVE);
+//        Matcher invalidMatcher = s.matcher(input);
+
+
         Matcher matcher = r.matcher(input);
         ArrayList<StitchBlock> matches = new ArrayList<>();
 

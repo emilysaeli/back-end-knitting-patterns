@@ -54,6 +54,9 @@ public class ReturnPattern {
                 outputPattern.set(currentIndex, row);
             }
         }
+        if (outputPattern.size() == 0) {
+            throw new RuntimeException("Unable to interpret pattern");
+        }
 
         // generate BO and CO stitch blocks and rows, add to beginning and end of outputPattern
         ArrayList<StitchBlock> bindOff = generateBindOffRow(outputPattern);
