@@ -20,21 +20,24 @@ public class StitchBlock {
     // generate stitch blocks, currently only looking for "K1" "P1" format
     public static ArrayList<StitchBlock> generateStitchBlocks(String input) {
         // parse string input into an array of stitchBlock capture groups
-        String stitchBlockPattern = "([KP]|Knit|Purl|Knit |Purl )(\\d+)";  // K or P or Knit or Purl + count
-//        String invalidPattern = "([KP]|Knit|Purl|Knit |Purl )"; // Missing count
+        String stitchBlockPattern = "([KP]|Knit|Purl|Knit |Purl )(\\d+)|([KP]|Knit|Purl|Knit |Purl )(?!\\d+| \\d+)";  // KP or Knit or Purl + count or no count
         Pattern r = Pattern.compile(stitchBlockPattern, Pattern.CASE_INSENSITIVE);
-//        Pattern s = Pattern.compile(invalidPattern, Pattern.CASE_INSENSITIVE);
-//        Matcher invalidMatcher = s.matcher(input);
-
-
         Matcher matcher = r.matcher(input);
         ArrayList<StitchBlock> matches = new ArrayList<>();
 
         while (matcher.find()) {
-            String stitchType = String.valueOf(matcher.group(1).charAt(0));
-            int count = Integer.parseInt(matcher.group(2));
-            StitchBlock stitchBlock = new StitchBlock(stitchType, count);
-            matches.add(stitchBlock);
+            try {
+                String stitchType = String.valueOf(matcher.group(1).charAt(0));
+                int count = Integer.parseInt(matcher.group(2));
+                StitchBlock stitchBlock = new StitchBlock(stitchType, count);
+                matches.add(stitchBlock);
+            }
+           catch (Exception e) {
+                String stitchType = String.valueOf(matcher.group(3).charAt(0));
+                int count = 1;
+                StitchBlock stitchBlock = new StitchBlock(stitchType, count);
+                matches.add(stitchBlock);
+            }
         }
         return matches;
     }
