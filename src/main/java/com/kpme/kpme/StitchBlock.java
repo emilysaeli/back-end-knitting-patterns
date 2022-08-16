@@ -29,13 +29,13 @@ public class StitchBlock {
             try {
                 String stitchType = String.valueOf(matcher.group(1).charAt(0));
                 int count = Integer.parseInt(matcher.group(2));
-                StitchBlock stitchBlock = new StitchBlock(stitchType, count);
+                StitchBlock stitchBlock = new StitchBlock(stitchType.toUpperCase(), count);
                 matches.add(stitchBlock);
             }
            catch (Exception e) {
                 String stitchType = String.valueOf(matcher.group(3).charAt(0));
                 int count = 1;
-                StitchBlock stitchBlock = new StitchBlock(stitchType, count);
+                StitchBlock stitchBlock = new StitchBlock(stitchType.toUpperCase(), count);
                 matches.add(stitchBlock);
             }
         }
