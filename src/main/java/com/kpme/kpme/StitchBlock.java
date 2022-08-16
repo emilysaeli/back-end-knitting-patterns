@@ -22,7 +22,7 @@ public class StitchBlock {
         String stitchBlockPattern = "([KP]|Knit|Purl|Knit |Purl )(\\d+)";  // K or P + count
         Pattern r = Pattern.compile(stitchBlockPattern, Pattern.CASE_INSENSITIVE);
         Matcher matcher = r.matcher(input);
-        ArrayList<StitchBlock> matches = new ArrayList<StitchBlock>();
+        ArrayList<StitchBlock> matches = new ArrayList<>();
 
         while (matcher.find()) {
             String stitchType = String.valueOf(matcher.group(1).charAt(0));
@@ -30,12 +30,15 @@ public class StitchBlock {
             StitchBlock stitchBlock = new StitchBlock(stitchType, count);
             matches.add(stitchBlock);
         }
+        if (matches.isEmpty()) {
+            throw new RuntimeException("Unable to identify stitches");
+        }
         return matches;
     }
 
     // generate CO and BO rows based on length of first row in pattern
     public static ArrayList<StitchBlock> generateCastOnRow(ArrayList<ArrayList<Stitch>> pattern) {
-        ArrayList<StitchBlock> castOnRow = new ArrayList<StitchBlock>();
+        ArrayList<StitchBlock> castOnRow = new ArrayList<>();
         String stitchType = "CO";
         int count = pattern.get(0).size();
         StitchBlock stitchBlock = new StitchBlock(stitchType, count);
@@ -43,7 +46,7 @@ public class StitchBlock {
         return castOnRow;
     }
     public static ArrayList<StitchBlock> generateBindOffRow(ArrayList<ArrayList<Stitch>> pattern) {
-        ArrayList<StitchBlock> bindOffRow = new ArrayList<StitchBlock>();
+        ArrayList<StitchBlock> bindOffRow = new ArrayList<>();
         String stitchType = "BO";
         int count = pattern.get(0).size();
         StitchBlock stitchBlock = new StitchBlock(stitchType, count);

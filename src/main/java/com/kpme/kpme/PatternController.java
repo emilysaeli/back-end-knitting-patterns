@@ -1,6 +1,8 @@
 package com.kpme.kpme;
 
 import org.springframework.web.bind.annotation.*;
+
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 
@@ -14,5 +16,6 @@ public class PatternController {
     public ArrayList<ArrayList<Stitch>> createPattern(@RequestBody InputPattern inputPattern) {
         return new ReturnPattern(inputPattern.inputPattern).createPattern();
     }
+
 }
 
